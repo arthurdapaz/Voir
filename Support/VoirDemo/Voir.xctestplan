@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "16508CC1-960C-4DA2-8B58-6E11479A8143",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:..\/..",
+        "identifier" : "VoirTests",
+        "name" : "VoirTests"
+      }
+    }
+  ],
+  "version" : 1
+}
