@@ -1,4 +1,4 @@
-<img align="right" src="/Support/VoirDemo/VoirDemo/Application/Resources/Assets.xcassets/voir.imageset/voir-image-transparent.png" width=30%>
+<img align="right" alt="Voir MVVM" src="/Support/VoirDemo/VoirDemo/Application/Resources/Assets.xcassets/voir.imageset/voir-image-transparent.png" width=30%>
 
 # Voir
 
@@ -16,8 +16,8 @@ Elegant Development: poetry and beauty in Swift code.
 
 | Pronunciation **/vwaʁ/** | Purpose |
 |-|-|
-| <img src="https://github.com/arthurdapaz/Voir/assets/2267843/cc10b766-788b-41d5-8c05-1d8d7ef45a89"> | Modern iOS app development requires a robust architecture that can handle complexity, maintainability, and separation of concerns. **Voir** aims to simplify this process by offering a clear and structured way to implement the MVVM (Model-View-ViewModel) architecture. MVVM is a popular architectural pattern that helps developers organize their codebase, improve testability, and enhance collaboration between team members. |
-| Listen Voir 👆 |  |
+| <img alt="Listen to the word VOIR pronunciation" src="https://github.com/arthurdapaz/Voir/assets/2267843/cc10b766-788b-41d5-8c05-1d8d7ef45a89"> | Modern iOS app development requires a robust architecture that can handle complexity, maintainability, and separation of concerns. **Voir** aims to simplify this process by offering a clear and structured way to implement the MVVM (Model-View-ViewModel) architecture. MVVM is a popular architectural pattern that helps developers organize their codebase, improve testability, and enhance collaboration between team members. |
+| Listen Voir 👆 | [<img align="right" src="https://github.com/arthurdapaz/Voir/actions/workflows/swift.yml/badge.svg">](https://github.com/arthurdapaz/Voir/actions/workflows/swift.yml) |
 
 </p>
 
