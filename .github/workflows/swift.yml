@@ -3,11 +3,21 @@ name: Voir Tests
 on:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      - 'Support/Voir Scene/*'
+      - 'backup/**'
+  
   pull_request:
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      - 'Support/Voir Scene/*'
+      - 'backup/**'
 
 jobs:
   build:
-
     runs-on: macos-latest
 
     steps:
@@ -19,5 +29,6 @@ jobs:
     - name: Test Voir
       run: |
         cd Support/VoirDemo
-        SIMULATORNAME=$(xcrun simctl list -j devices available | jq -r '.devices | to_entries[] | (.key | capture("com\\.apple\\.CoreSimulator\\.SimRuntime\\.iOS-(?<version>.+)")) as {$version} | .value[] | {name: "\(.name),OS=\($version|sub("-"; "."))"} | first(.[])' | head -n 1)
+        DEVICES=$(xcrun simctl list -j devices available)
+        SIMULATORNAME=$(echo "$DEVICES" | jq -r '.devices | to_entries[] | (.key | capture("com\\.apple\\.CoreSimulator\\.SimRuntime\\.iOS-(?<version>.+)")) as {$version} | .value[] | {name: "\(.name),OS=\($version|sub("-"; "."))"} | first(.[])' | head -n 1)
         xcodebuild test -scheme "VoirDemo" -destination "platform=iOS Simulator,name=${SIMULATORNAME}" -skip-testing:VoirTests/VoirControllerTests/testComponentWithoutOutputConformance -skip-testing:VoirTests/VoirControllerTests/testViewModelWithoutInputConformance | xcpretty
