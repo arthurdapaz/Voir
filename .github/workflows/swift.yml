@@ -8,7 +8,7 @@ on:
       - 'LICENSE'
       - 'Support/Voir Scene/*'
       - 'backup/**'
-  
+
   pull_request:
     paths-ignore:
       - 'README.md'
@@ -22,13 +22,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Install jq
       uses: dcarbone/install-jq-action@v1.0.1
-            
+
     - name: Test Voir
       run: |
+        DESTINATION=`swift .github/scripts/obtain-simulator.swift`
         cd Support/VoirDemo
-        DEVICES=$(xcrun simctl list -j devices available)
-        SIMULATORNAME=$(echo "$DEVICES" | jq -r '.devices | to_entries[] | (.key | capture("com\\.apple\\.CoreSimulator\\.SimRuntime\\.iOS-(?<version>.+)")) as {$version} | .value[] | {name: "\(.name),OS=\($version|sub("-"; "."))"} | first(.[])' | head -n 1)
-        xcodebuild test -scheme "VoirDemo" -destination "platform=iOS Simulator,name=${SIMULATORNAME}" -skip-testing:VoirTests/VoirControllerTests/testComponentWithoutOutputConformance -skip-testing:VoirTests/VoirControllerTests/testViewModelWithoutInputConformance | xcpretty
+        xcodebuild test -scheme "VoirDemo" -destination "${DESTINATION}" \
+            -skip-testing:VoirTests/VoirControllerTests/testComponentWithoutOutputConformance \
+            -skip-testing:VoirTests/VoirControllerTests/testViewModelWithoutInputConformance \
+            | xcpretty
