@@ -64,6 +64,10 @@ For more detailed usage instructions and examples, refer to the `DemoApp` inside
 
 Checkout **DemoApp.xcproject** at `Support/VoirDemo` folder. It has a small demonstration on how you can take advantage of every feature Voir can offer.
 
+## Architecture Overview
+
+![voir-architecture](https://github.com/arthurdapaz/Voir/assets/2267843/aebcb96f-ea86-433a-9964-ba60ebf8029a)
+
 ## Contributing
 
 Contributions to Voir are welcome! If you find a bug, want to request a feature, or would like to improve the code, please submit an issue or pull request.
