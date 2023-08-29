@@ -40,7 +40,18 @@ Elegant Development: poetry and beauty in Swift code.
 
 https://github.com/arthurdapaz/Voir/assets/2267843/d524ce42-8847-43cf-b852-584879d11151
 
+## Install Xcode Template
+
+On your terminal, inside the cloned project folder, just run:
+
+```bash
+swift run
+```
+
 For more detailed usage instructions and examples, refer to the `DemoApp` inside `Support/` folder in the repository.
+
+## DemoApp
+Checkout **DemoApp.xcproject** at `Support/` folder. It has a small demonstration of how you can take advantage of every feature Voir can offer.
 
 ## Contributing
 
