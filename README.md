@@ -66,7 +66,8 @@ Checkout **DemoApp.xcproject** at `Support/VoirDemo` folder. It has a small demo
 
 ## Architecture Overview
 
-![voir-architecture](https://github.com/arthurdapaz/Voir/assets/2267843/aebcb96f-ea86-433a-9964-ba60ebf8029a)
+![voir-flow](https://github.com/arthurdapaz/Voir/assets/2267843/b1e80265-9f1a-47c4-9cea-63d941091327)
+
 
 Are you on **dark mode**? <sup>Tap 👆 to see full white background.</sup>
 
