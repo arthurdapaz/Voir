@@ -80,6 +80,11 @@ open class VoirController<View: VoirComponent, ViewModel: VoirModel>: UIViewCont
         stopObservations()
     }
 
+    open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        notifyObservers(.viewWillTransition(self, size, coordinator))
+    }
+
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         notifyObservers(.traitCollectionDidChange(self, previousTraitCollection))

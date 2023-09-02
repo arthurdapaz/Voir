@@ -1,5 +1,4 @@
-import class UIKit.UIViewController
-import class UIKit.UITraitCollection
+import UIKit
 
 public protocol LifecycleObserver: AnyObject {
     func lifecycleUpdate(_ cycle: Lifecycle)
@@ -18,5 +17,6 @@ public enum Lifecycle {
     case didBecomeActive(_ controller: UIViewController)
     case willEnterForeground(_ controller: UIViewController)
     case willBecomeInactive(_ controller: UIViewController)
+    case viewWillTransition(_ controller: UIViewController, _ size: CGSize, _ coordinator: UIViewControllerTransitionCoordinator)
     case traitCollectionDidChange(_ controller: UIViewController, _ previousTraitCollection: UITraitCollection?)
 }
