@@ -16,7 +16,7 @@ Elegant Development: poetry and beauty in Swift code.
 
 | Pronunciation **/vwaʁ/** | Purpose |
 |-|-|
-| <img src="https://github.com/arthurdapaz/Voir/assets/2267843/cc10b766-788b-41d5-8c05-1d8d7ef45a89"> | Modern iOS app development requires a robust architecture that can handle complexity, maintainability, and separation of concerns. **Voir** aims to simplify this process by offering a clear and structured way to implement the MVVM (Model-View-ViewModel) architecture. MVVM is a popular architectural pattern that helps developers organize their codebase, improve testability, and enhance collaboration between team members. |
+| <img src="https://github.com/arthurdapaz/Voir/assets/2267843/3cf67bd1-b594-4e1b-8275-e445bdb975bd"> | Modern iOS app development requires a robust architecture that can handle complexity, maintainability, and separation of concerns. **Voir** aims to simplify this process by offering a clear and structured way to implement the MVVM (Model-View-ViewModel) architecture. MVVM is a popular architectural pattern that helps developers organize their codebase, improve testability, and enhance collaboration between team members. |
 | Listen Voir 👆 | [<img align="right" src="https://github.com/arthurdapaz/Voir/actions/workflows/swift.yml/badge.svg">](https://github.com/arthurdapaz/Voir/actions/workflows/swift.yml) |
 
 </p>
@@ -29,7 +29,7 @@ Elegant Development: poetry and beauty in Swift code.
 
 - **Lifecycle Observations**: Voir provides built-in lifecycle observation mechanism that automatically notify its components. This feature aids in efficiently managing resource allocation and deallocation. This aspect of Voir almost eliminates the need for touching a UIViewController again, as the `VoirController` efficiently relays all of its lifecycle events to both `VoirComponent` and `VoirModel`.
 
-- **Builder Patterns**: The framework includes builder patterns (`VoirBuilder` and `ConstraintsBuilder`) that simplify the process of constructing complex UI hierarchies and defining layout constraints. Together, these patterns provide a beautiful domain-specific language (DSL) that not only enhances your code's aesthetics but also makes it completely understandable and easy to maintain when designing, positioning, and configuring UI elements.
+- **Builder Patterns**: The framework includes builder patterns (`VoirBuilder` and `ConstraintsBuilder`) that simplify the process of constructing complex UI hierarchies and defining layout constraints. Together, these patterns provide a beautiful domain-specific language (DSL) that not only enhances your code's aesthetics but also makes it completely understandable and easy to maintain when designing, positioning, and configuring UI elements. `Voir Builer` is also a separated target inside the package and can be used without outside the MVVM architecture.
 
 - **View Controller Helper**: With the `viewController` property extension on `UIView`, you can easily find the parent UIViewController of any view, aiding in navigation and communication within your app.
 
@@ -38,7 +38,7 @@ Elegant Development: poetry and beauty in Swift code.
 1. To integrate Voir into your project, simply include the framework as a Swift package.
 2. There is also a `.xctemplate` to easily create a Voir MVVM Scene. Check the recording below 👇 
 
-https://github.com/arthurdapaz/Voir/assets/2267843/d524ce42-8847-43cf-b852-584879d11151
+https://github.com/arthurdapaz/Voir/assets/2267843/0e2d3080-c8e7-4d8b-842d-b5b3e396fa84
 
 ## Template Installer
 
@@ -66,8 +66,7 @@ Checkout **DemoApp.xcproject** at `Support/VoirDemo` folder. It has a small demo
 
 ## Architecture Overview
 
-![voir-flow](https://github.com/arthurdapaz/Voir/assets/2267843/b1e80265-9f1a-47c4-9cea-63d941091327)
-
+![voir-flowchart-animated](https://github.com/arthurdapaz/Voir/assets/2267843/04b2046d-6958-4e00-9cd7-0e6c5d2a4787)
 
 Are you on **dark mode**? <sup>Tap 👆 to see full white background.</sup>
 
