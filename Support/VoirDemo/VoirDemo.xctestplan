@@ -1,0 +1,35 @@
+{
+  "configurations" : [
+    {
+      "id" : "176C3FBC-E647-440C-A237-C43526357562",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:VoirDemo.xcodeproj",
+      "identifier" : "2553F01B2A9AF3B600F07A3A",
+      "name" : "VoirDemo"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:..\/..",
+        "identifier" : "VoirBuilderTests",
+        "name" : "VoirBuilderTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/..",
+        "identifier" : "VoirTests",
+        "name" : "VoirTests"
+      }
+    }
+  ],
+  "version" : 1
+}

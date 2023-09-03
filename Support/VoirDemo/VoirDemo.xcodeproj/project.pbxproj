@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,11 +11,12 @@
 		2553F0222A9AF3B600F07A3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2553F0212A9AF3B600F07A3A /* SceneDelegate.swift */; };
 		2553F0292A9AF3B700F07A3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2553F0282A9AF3B700F07A3A /* Assets.xcassets */; };
 		2553F02C2A9AF3B700F07A3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2553F02A2A9AF3B700F07A3A /* LaunchScreen.storyboard */; };
-		256524E72AA464D000D06305 /* Voir in Frameworks */ = {isa = PBXBuildFile; productRef = 256524E62AA464D000D06305 /* Voir */; };
-		256524E92AA464D000D06305 /* VoirBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 256524E82AA464D000D06305 /* VoirBuilder */; };
 		25D3B3E72A9B01EC00761DC8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D3B3E62A9B01EC00761DC8 /* Login.swift */; };
 		25D3B3E92A9B01F600761DC8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D3B3E82A9B01F600761DC8 /* LoginViewModel.swift */; };
 		25D3B3ED2A9B021400761DC8 /* LoginComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D3B3EC2A9B021400761DC8 /* LoginComponent.swift */; };
+		25DE72652AA466F600190F6E /* Voir in Resources */ = {isa = PBXBuildFile; fileRef = 25DE72642AA466F600190F6E /* Voir */; };
+		25DE72672AA4670500190F6E /* Voir in Frameworks */ = {isa = PBXBuildFile; productRef = 25DE72662AA4670500190F6E /* Voir */; };
+		25DE72692AA4670800190F6E /* VoirBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 25DE72682AA4670800190F6E /* VoirBuilder */; };
 		25FD35F12A9C00F60069A07F /* SomeFeatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FD35EE2A9C00F60069A07F /* SomeFeatureViewModel.swift */; };
 		25FD35F22A9C00F60069A07F /* SomeFeatureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FD35EF2A9C00F60069A07F /* SomeFeatureComponent.swift */; };
 		25FD35F32A9C00F60069A07F /* SomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FD35F02A9C00F60069A07F /* SomeFeature.swift */; };
@@ -33,6 +34,8 @@
 		25D3B3E62A9B01EC00761DC8 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		25D3B3E82A9B01F600761DC8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		25D3B3EC2A9B021400761DC8 /* LoginComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginComponent.swift; sourceTree = "<group>"; };
+		25DE72632AA466CD00190F6E /* VoirDemo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = VoirDemo.xctestplan; sourceTree = "<group>"; };
+		25DE72642AA466F600190F6E /* Voir */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Voir; path = ../..; sourceTree = "<group>"; };
 		25FD35EE2A9C00F60069A07F /* SomeFeatureViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeFeatureViewModel.swift; sourceTree = "<group>"; };
 		25FD35EF2A9C00F60069A07F /* SomeFeatureComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeFeatureComponent.swift; sourceTree = "<group>"; };
 		25FD35F02A9C00F60069A07F /* SomeFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeFeature.swift; sourceTree = "<group>"; };
@@ -45,8 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				256524E92AA464D000D06305 /* VoirBuilder in Frameworks */,
-				256524E72AA464D000D06305 /* Voir in Frameworks */,
+				25DE72692AA4670800190F6E /* VoirBuilder in Frameworks */,
+				25DE72672AA4670500190F6E /* Voir in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +59,8 @@
 		2553F0132A9AF3B600F07A3A = {
 			isa = PBXGroup;
 			children = (
+				25DE72642AA466F600190F6E /* Voir */,
+				25DE72632AA466CD00190F6E /* VoirDemo.xctestplan */,
 				2553F01E2A9AF3B600F07A3A /* VoirDemo */,
 				2553F01D2A9AF3B600F07A3A /* Products */,
 				258485512A9D3AD2004D6F59 /* Frameworks */,
@@ -170,8 +175,8 @@
 			);
 			name = VoirDemo;
 			packageProductDependencies = (
-				256524E62AA464D000D06305 /* Voir */,
-				256524E82AA464D000D06305 /* VoirBuilder */,
+				25DE72662AA4670500190F6E /* Voir */,
+				25DE72682AA4670800190F6E /* VoirBuilder */,
 			);
 			productName = VoirDemo;
 			productReference = 2553F01C2A9AF3B600F07A3A /* VoirDemo.app */;
@@ -202,7 +207,6 @@
 			);
 			mainGroup = 2553F0132A9AF3B600F07A3A;
 			packageReferences = (
-				256524E52AA464D000D06305 /* XCLocalSwiftPackageReference "../.." */,
 			);
 			productRefGroup = 2553F01D2A9AF3B600F07A3A /* Products */;
 			projectDirPath = "";
@@ -220,6 +224,7 @@
 			files = (
 				2553F02C2A9AF3B700F07A3A /* LaunchScreen.storyboard in Resources */,
 				2553F0292A9AF3B700F07A3A /* Assets.xcassets in Resources */,
+				25DE72652AA466F600190F6E /* Voir in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,19 +458,12 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		256524E52AA464D000D06305 /* XCLocalSwiftPackageReference "../.." */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../..;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		256524E62AA464D000D06305 /* Voir */ = {
+		25DE72662AA4670500190F6E /* Voir */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Voir;
 		};
-		256524E82AA464D000D06305 /* VoirBuilder */ = {
+		25DE72682AA4670800190F6E /* VoirBuilder */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = VoirBuilder;
 		};
