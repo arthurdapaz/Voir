@@ -1,5 +1,5 @@
 import XCTest
-@testable import Voir
+@testable import VoirBuilder
 
 final class VoirBuilderTests: XCTestCase {
 
@@ -16,8 +16,7 @@ final class VoirBuilderTests: XCTestCase {
         XCTAssertEqual(result, [view1, view2])
     }
 
-    // Test the ConstraintsBuilder buildBlock and buildExpression methods
-    func testConstraintsBuilder() {
+    func testConstraintsBuilder_WhenIndividualConstraints() {
         let constraint1 = NSLayoutConstraint()
         let constraint2 = NSLayoutConstraint()
 
@@ -29,8 +28,18 @@ final class VoirBuilderTests: XCTestCase {
         XCTAssertEqual(result, [constraint1, constraint2])
     }
 
-    // Test the `callAsFunction` method for adding subviews
-    func testCallAsFunctionMethod() {
+    func testConstraintsBuilder_WhenArrayOfConstraints() {
+        let constraint1 = NSLayoutConstraint()
+        let constraint2 = NSLayoutConstraint()
+
+        let result = ConstraintsBuilder.buildBlock(
+            ConstraintsBuilder.buildExpression([constraint1, constraint2])
+        )
+
+        XCTAssertEqual(result, [constraint1, constraint2])
+    }
+
+    func testCallAsFunction_IncludingStackViews() {
         let superview = UIView()
         let subview1 = UIView()
         let subview2 = UIView()
@@ -54,8 +63,7 @@ final class VoirBuilderTests: XCTestCase {
         XCTAssertTrue(stackview.arrangedSubviews.contains(arrangedSubview2))
     }
 
-    // Test the `activate` method for activating constraints
-    func testActivateMethod() {
+    func testActivateConstraints_WhenDeviceIsPortrait() {
         let view = UIView()
 
         let constraint1 = view.widthAnchor.constraint(equalToConstant: 50)
@@ -64,27 +72,35 @@ final class VoirBuilderTests: XCTestCase {
         view.activate {
             constraint1
             constraint2
-        }
+        }.when(.portrait)
+
+        view.orientation = .portrait
+
 
         XCTAssertTrue(view.constraints.contains(constraint1))
         XCTAssertTrue(view.constraints.contains(constraint2))
     }
 
-    // Test the `make` method for customizing the view
-    func testMakeMethod() {
+    func testActivateConstraints_WhenDeviceIsLandscpae() {
         let view = UIView()
-        var isCustomized = false
 
-        _ = view.make {
-            isCustomized = true
-        }
+        let constraint1 = view.widthAnchor.constraint(equalToConstant: 50)
+        let constraint2 = view.heightAnchor.constraint(equalToConstant: 50)
 
-        XCTAssertTrue(isCustomized)
+        view.activate {
+            constraint1
+            constraint2
+        }.when(.landscape)
+
+        view.orientation = .landscape
+
+        XCTAssertTrue(view.constraints.contains(constraint1))
+        XCTAssertTrue(view.constraints.contains(constraint2))
     }
 
     // Test UIControl elements easy customization
-    func testUIAppearanceVoir() {
-        let element = UIView().voir {
+    func testIsThis() {
+        let element = UIView().is {
             $0.backgroundColor = .white
             $0.tag = 1000
         }

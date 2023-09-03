@@ -20,6 +20,10 @@ public enum ConstraintsBuilder {
     public static func buildExpression(_ expression: NSLayoutConstraint) -> [NSLayoutConstraint] {
         [expression]
     }
+
+    public static func buildExpression(_ expression: [NSLayoutConstraint]) -> [NSLayoutConstraint] {
+        expression
+    }
 }
 
 public extension UIView {
@@ -37,18 +41,6 @@ public extension UIView {
     @discardableResult
     func callAsFunction(@VoirBuilder subviews: () -> [UIView]) -> UIView {
         mount(subviews())
-        return self
-    }
-
-    @discardableResult
-    func activate(@ConstraintsBuilder activate: () -> [NSLayoutConstraint]) -> UIView {
-        NSLayoutConstraint.activate(activate())
-        return self
-    }
-
-    @discardableResult
-    func make(customization: () -> Void) -> UIView {
-        customization()
         return self
     }
 }

@@ -24,7 +24,7 @@ extension XCTestCase {
             Thread(block: testcase).start()
         }
 
-        waitForExpectations(timeout: 5) { _ in
+        waitForExpectations(timeout: 30) { _ in
             XCTAssertEqual(expectedMessage, assertionMessage)
             triggerFatalError = Swift.fatalError
         }

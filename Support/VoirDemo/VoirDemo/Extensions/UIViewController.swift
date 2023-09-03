@@ -15,11 +15,10 @@ extension UIViewController {
                 label.centerYAnchor.constraint(equalTo: emptyController.view.safeAreaLayoutGuide.centerYAnchor, constant: -128)
                 label.leadingAnchor.constraint(equalTo: emptyController.view.leadingAnchor, constant: 32)
                 label.trailingAnchor.constraint(equalTo: emptyController.view.trailingAnchor, constant: -32)
-            }
-            .make {
-                emptyController.title = "Test Memory Leak"
-                emptyController.view.backgroundColor = .white
-            }
+            }.when(.always)
+
+        emptyController.title = "Test Memory Leak"
+        emptyController.view.backgroundColor = .white
 
         return emptyController
     }

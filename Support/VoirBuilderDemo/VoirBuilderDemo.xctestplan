@@ -1,0 +1,22 @@
+{
+  "configurations" : [
+    {
+      "id" : "3EDBC5C9-8D0E-4A06-B134-48C81869D264",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:VoirDemo.xcodeproj",
+      "identifier" : "2553F01B2A9AF3B600F07A3A",
+      "name" : "VoirDemo"
+    }
+  },
+  "testTargets" : [
+
+  ],
+  "version" : 1
+}

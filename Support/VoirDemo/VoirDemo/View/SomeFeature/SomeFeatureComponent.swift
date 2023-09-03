@@ -1,5 +1,6 @@
 import UIKit
 import Voir
+import VoirBuilder
 
 protocol SomeFeatureComponentInput: AnyObject {
     func didTapButton()
@@ -8,26 +9,26 @@ protocol SomeFeatureComponentInput: AnyObject {
 final class SomeFeatureComponent: UIView, VoirComponent {
     weak var input: SomeFeatureComponentInput?
 
-    private let stackView = UIStackView().voir {
+    private let stackView = UIStackView().is {
         $0.axis = .vertical
         $0.spacing = 8
         $0.alignment = .top
     }
 
-    private let titleLabel = UILabel().voir {
+    private let titleLabel = UILabel().is {
         $0.text = "Template Title"
         $0.textAlignment = .left
         $0.numberOfLines = .zero
         $0.font = .preferredFont(forTextStyle: .largeTitle)
     }
 
-    private let subtitleLabel = UILabel().voir {
+    private let subtitleLabel = UILabel().is {
         $0.text = "Template Subtitle for Demo Purposes"
         $0.textAlignment = .left
         $0.numberOfLines = .zero
     }
 
-    private let someButton = UIButton(type: .system).voir {
+    private let someButton = UIButton(type: .system).is {
         $0.setTitle("Template Login", for: .normal)
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
     }
@@ -50,11 +51,10 @@ final class SomeFeatureComponent: UIView, VoirComponent {
             someButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
             someButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
             someButton.heightAnchor.constraint(equalToConstant: 40)
-        }
+        }.when(.always)
 
-        make {
-            backgroundColor = .white
-        }
+
+        backgroundColor = .white
     }
 
     func bindViews(with input: SomeFeatureComponentInput) {

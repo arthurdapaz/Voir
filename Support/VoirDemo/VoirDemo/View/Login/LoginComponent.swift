@@ -1,5 +1,6 @@
 import UIKit
 import Voir
+import VoirBuilder
 
 protocol LoginComponentInput: AnyObject {
     func didTapLogin(_ username: String?, _ password: String?)
@@ -9,39 +10,39 @@ protocol LoginComponentInput: AnyObject {
 final class LoginComponent: UIView, VoirComponent {
     weak var input: LoginComponentInput?
 
-    private let stackView = UIStackView().voir {
+    private let stackView = UIStackView().is {
         $0.axis = .vertical
         $0.spacing = .zero
         $0.alignment = .top
     }
 
-    private let titleLabel = UILabel().voir {
+    private let titleLabel = UILabel().is {
         $0.text = "Template Title"
         $0.textAlignment = .left
     }
 
-    private let subtitleLabel = UILabel().voir {
+    private let subtitleLabel = UILabel().is {
         $0.text = "Template Subtitle for Demo Purposes"
         $0.textAlignment = .left
     }
 
-    private let usernameTextField = UITextField().voir {
+    private let usernameTextField = UITextField().is {
         $0.placeholder = "Username"
         $0.borderStyle = .roundedRect
     }
 
-    private let passwordTextField = UITextField().voir {
+    private let passwordTextField = UITextField().is {
         $0.placeholder = "Password"
         $0.isSecureTextEntry = true
         $0.borderStyle = .roundedRect
     }
 
-    private let loginButton = UIButton(type: .system).voir {
+    private let loginButton = UIButton(type: .system).is {
         $0.setTitle("Login", for: .normal)
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
     }
 
-    private let forgotPasswordButton = UIButton(type: .system).voir {
+    private let forgotPasswordButton = UIButton(type: .system).is {
         $0.setTitle("Forgot Password?", for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
     }
@@ -72,11 +73,10 @@ final class LoginComponent: UIView, VoirComponent {
 
             forgotPasswordButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 10)
             forgotPasswordButton.centerXAnchor.constraint(equalTo: centerXAnchor)
-        }
+        }.when(.always)
 
-        make {
-            backgroundColor = .white
-        }
+
+        backgroundColor = .white
     }
 
     func bindViews(with input: LoginComponentInput) {

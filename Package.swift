@@ -3,18 +3,21 @@
 
 import PackageDescription
 
-let dependency = Target.Dependency.targetItem(name: "Voir", condition: .when(platforms: [.iOS]))
-
 let package = Package(
     name: "Voir",
     platforms: [.iOS(.v14)],
     products: [
         .library(name: "Voir", type: .static, targets: ["Voir"]),
+        .library(name: "VoirBuilder", type: .static, targets: ["VoirBuilder"]),
         .executable(name: "TemplateInstaller", targets: ["TemplateInstaller"])
     ],
     targets: [
-        .target(name: "Voir"),
-        .testTarget(name: "VoirTests", dependencies: [dependency]),
+        .target(name: "Voir", dependencies: [.target(name: "VoirBuilder")]),
+        .testTarget(name: "VoirTests", dependencies: [.target(name: "Voir")]),
+
+        .target(name: "VoirBuilder"),
+        .testTarget(name: "VoirBuilderTests", dependencies: [.target(name: "VoirBuilder")]),
+
         .executableTarget(name: "TemplateInstaller")
     ]
 )

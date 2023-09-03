@@ -11,33 +11,25 @@
 		2553F0222A9AF3B600F07A3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2553F0212A9AF3B600F07A3A /* SceneDelegate.swift */; };
 		2553F0292A9AF3B700F07A3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2553F0282A9AF3B700F07A3A /* Assets.xcassets */; };
 		2553F02C2A9AF3B700F07A3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2553F02A2A9AF3B700F07A3A /* LaunchScreen.storyboard */; };
-		256524E72AA464D000D06305 /* Voir in Frameworks */ = {isa = PBXBuildFile; productRef = 256524E62AA464D000D06305 /* Voir */; };
-		256524E92AA464D000D06305 /* VoirBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 256524E82AA464D000D06305 /* VoirBuilder */; };
-		25D3B3E72A9B01EC00761DC8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D3B3E62A9B01EC00761DC8 /* Login.swift */; };
-		25D3B3E92A9B01F600761DC8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D3B3E82A9B01F600761DC8 /* LoginViewModel.swift */; };
-		25D3B3ED2A9B021400761DC8 /* LoginComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D3B3EC2A9B021400761DC8 /* LoginComponent.swift */; };
-		25FD35F12A9C00F60069A07F /* SomeFeatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FD35EE2A9C00F60069A07F /* SomeFeatureViewModel.swift */; };
-		25FD35F22A9C00F60069A07F /* SomeFeatureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FD35EF2A9C00F60069A07F /* SomeFeatureComponent.swift */; };
-		25FD35F32A9C00F60069A07F /* SomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FD35F02A9C00F60069A07F /* SomeFeature.swift */; };
-		25FD35F62A9C088E0069A07F /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FD35F52A9C088E0069A07F /* RouterProtocol.swift */; };
-		25FD38242A9C21920069A07F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FD38232A9C21920069A07F /* UIViewController.swift */; };
+		256524DD2AA4273300D06305 /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256524DC2AA4273300D06305 /* ViewComponent.swift */; };
+		256524DF2AA44D7D00D06305 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256524DE2AA44D7D00D06305 /* Extensions.swift */; };
+		256524E12AA451D800D06305 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256524E02AA451D800D06305 /* DisclaimerViewController.swift */; };
+		256524EC2AA4659900D06305 /* VoirBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 256524EB2AA4659900D06305 /* VoirBuilder */; };
+		25D3B3ED2A9B021400761DC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D3B3EC2A9B021400761DC8 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2553F01C2A9AF3B600F07A3A /* VoirDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoirDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2553F01C2A9AF3B600F07A3A /* VoirBuilderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoirBuilderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2553F01F2A9AF3B600F07A3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2553F0212A9AF3B600F07A3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2553F0282A9AF3B700F07A3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2553F02B2A9AF3B700F07A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2553F02D2A9AF3B700F07A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25D3B3E62A9B01EC00761DC8 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		25D3B3E82A9B01F600761DC8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		25D3B3EC2A9B021400761DC8 /* LoginComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginComponent.swift; sourceTree = "<group>"; };
-		25FD35EE2A9C00F60069A07F /* SomeFeatureViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeFeatureViewModel.swift; sourceTree = "<group>"; };
-		25FD35EF2A9C00F60069A07F /* SomeFeatureComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeFeatureComponent.swift; sourceTree = "<group>"; };
-		25FD35F02A9C00F60069A07F /* SomeFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeFeature.swift; sourceTree = "<group>"; };
-		25FD35F52A9C088E0069A07F /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
-		25FD38232A9C21920069A07F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		256524D72AA4259300D06305 /* VoirBuilderDemo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = VoirBuilderDemo.xctestplan; sourceTree = "<group>"; };
+		256524DC2AA4273300D06305 /* ViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComponent.swift; sourceTree = "<group>"; };
+		256524DE2AA44D7D00D06305 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		256524E02AA451D800D06305 /* DisclaimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerViewController.swift; sourceTree = "<group>"; };
+		25D3B3EC2A9B021400761DC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,8 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				256524E92AA464D000D06305 /* VoirBuilder in Frameworks */,
-				256524E72AA464D000D06305 /* Voir in Frameworks */,
+				256524EC2AA4659900D06305 /* VoirBuilder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +47,7 @@
 		2553F0132A9AF3B600F07A3A = {
 			isa = PBXGroup;
 			children = (
+				256524D72AA4259300D06305 /* VoirBuilderDemo.xctestplan */,
 				2553F01E2A9AF3B600F07A3A /* VoirDemo */,
 				2553F01D2A9AF3B600F07A3A /* Products */,
 				258485512A9D3AD2004D6F59 /* Frameworks */,
@@ -65,7 +57,7 @@
 		2553F01D2A9AF3B600F07A3A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2553F01C2A9AF3B600F07A3A /* VoirDemo.app */,
+				2553F01C2A9AF3B600F07A3A /* VoirBuilderDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,8 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				25D3B3F12A9B09E900761DC8 /* Application */,
-				25FD35F42A9C08870069A07F /* Dependencies */,
-				25FD38202A9C21660069A07F /* Extensions */,
 				25D3B3E42A9B01BF00761DC8 /* View */,
 			);
 			path = VoirDemo;
@@ -91,20 +81,12 @@
 		25D3B3E42A9B01BF00761DC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				25FD35ED2A9C00F60069A07F /* SomeFeature */,
-				25D3B3E52A9B01D500761DC8 /* Login */,
+				256524E02AA451D800D06305 /* DisclaimerViewController.swift */,
+				256524DE2AA44D7D00D06305 /* Extensions.swift */,
+				256524DC2AA4273300D06305 /* ViewComponent.swift */,
+				25D3B3EC2A9B021400761DC8 /* ViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		25D3B3E52A9B01D500761DC8 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				25D3B3E62A9B01EC00761DC8 /* Login.swift */,
-				25D3B3EC2A9B021400761DC8 /* LoginComponent.swift */,
-				25D3B3E82A9B01F600761DC8 /* LoginViewModel.swift */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		25D3B3F12A9B09E900761DC8 /* Application */ = {
@@ -127,38 +109,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		25FD35ED2A9C00F60069A07F /* SomeFeature */ = {
-			isa = PBXGroup;
-			children = (
-				25FD35F02A9C00F60069A07F /* SomeFeature.swift */,
-				25FD35EF2A9C00F60069A07F /* SomeFeatureComponent.swift */,
-				25FD35EE2A9C00F60069A07F /* SomeFeatureViewModel.swift */,
-			);
-			path = SomeFeature;
-			sourceTree = "<group>";
-		};
-		25FD35F42A9C08870069A07F /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				25FD35F52A9C088E0069A07F /* RouterProtocol.swift */,
-			);
-			path = Dependencies;
-			sourceTree = "<group>";
-		};
-		25FD38202A9C21660069A07F /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				25FD38232A9C21920069A07F /* UIViewController.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2553F01B2A9AF3B600F07A3A /* VoirDemo */ = {
+		2553F01B2A9AF3B600F07A3A /* VoirBuilderDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2553F0302A9AF3B700F07A3A /* Build configuration list for PBXNativeTarget "VoirDemo" */;
+			buildConfigurationList = 2553F0302A9AF3B700F07A3A /* Build configuration list for PBXNativeTarget "VoirBuilderDemo" */;
 			buildPhases = (
 				2553F0182A9AF3B600F07A3A /* Sources */,
 				2553F0192A9AF3B600F07A3A /* Frameworks */,
@@ -168,13 +124,12 @@
 			);
 			dependencies = (
 			);
-			name = VoirDemo;
+			name = VoirBuilderDemo;
 			packageProductDependencies = (
-				256524E62AA464D000D06305 /* Voir */,
-				256524E82AA464D000D06305 /* VoirBuilder */,
+				256524EB2AA4659900D06305 /* VoirBuilder */,
 			);
 			productName = VoirDemo;
-			productReference = 2553F01C2A9AF3B600F07A3A /* VoirDemo.app */;
+			productReference = 2553F01C2A9AF3B600F07A3A /* VoirBuilderDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -192,7 +147,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2553F0172A9AF3B600F07A3A /* Build configuration list for PBXProject "VoirDemo" */;
+			buildConfigurationList = 2553F0172A9AF3B600F07A3A /* Build configuration list for PBXProject "VoirBuilderDemo" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -202,13 +157,13 @@
 			);
 			mainGroup = 2553F0132A9AF3B600F07A3A;
 			packageReferences = (
-				256524E52AA464D000D06305 /* XCLocalSwiftPackageReference "../.." */,
+				256524EA2AA4659900D06305 /* XCLocalSwiftPackageReference "../.." */,
 			);
 			productRefGroup = 2553F01D2A9AF3B600F07A3A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2553F01B2A9AF3B600F07A3A /* VoirDemo */,
+				2553F01B2A9AF3B600F07A3A /* VoirBuilderDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -230,16 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25FD35F62A9C088E0069A07F /* RouterProtocol.swift in Sources */,
-				25FD35F12A9C00F60069A07F /* SomeFeatureViewModel.swift in Sources */,
-				25FD38242A9C21920069A07F /* UIViewController.swift in Sources */,
-				25D3B3ED2A9B021400761DC8 /* LoginComponent.swift in Sources */,
-				25FD35F22A9C00F60069A07F /* SomeFeatureComponent.swift in Sources */,
-				25D3B3E72A9B01EC00761DC8 /* Login.swift in Sources */,
+				256524DF2AA44D7D00D06305 /* Extensions.swift in Sources */,
+				256524DD2AA4273300D06305 /* ViewComponent.swift in Sources */,
+				25D3B3ED2A9B021400761DC8 /* ViewController.swift in Sources */,
 				2553F0202A9AF3B600F07A3A /* AppDelegate.swift in Sources */,
-				25FD35F32A9C00F60069A07F /* SomeFeature.swift in Sources */,
-				25D3B3E92A9B01F600761DC8 /* LoginViewModel.swift in Sources */,
 				2553F0222A9AF3B600F07A3A /* SceneDelegate.swift in Sources */,
+				256524E12AA451D800D06305 /* DisclaimerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +384,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2553F0172A9AF3B600F07A3A /* Build configuration list for PBXProject "VoirDemo" */ = {
+		2553F0172A9AF3B600F07A3A /* Build configuration list for PBXProject "VoirBuilderDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2553F02E2A9AF3B700F07A3A /* Debug */,
@@ -442,7 +393,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2553F0302A9AF3B700F07A3A /* Build configuration list for PBXNativeTarget "VoirDemo" */ = {
+		2553F0302A9AF3B700F07A3A /* Build configuration list for PBXNativeTarget "VoirBuilderDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2553F0312A9AF3B700F07A3A /* Debug */,
@@ -454,18 +405,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		256524E52AA464D000D06305 /* XCLocalSwiftPackageReference "../.." */ = {
+		256524EA2AA4659900D06305 /* XCLocalSwiftPackageReference "../.." */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../..;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		256524E62AA464D000D06305 /* Voir */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Voir;
-		};
-		256524E82AA464D000D06305 /* VoirBuilder */ = {
+		256524EB2AA4659900D06305 /* VoirBuilder */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = VoirBuilder;
 		};
