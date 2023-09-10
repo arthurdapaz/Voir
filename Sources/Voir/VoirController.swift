@@ -57,11 +57,6 @@ open class VoirController<View: VoirComponent, ViewModel: VoirModel>: UIViewCont
     // MARK: - ViewController LifeCycle
     open override func viewDidLoad() {
         super.viewDidLoad()
-        if traitCollection.verticalSizeClass == .regular && traitCollection.horizontalSizeClass == .compact {
-            view.orientation = .portrait
-        } else {
-            view.orientation = .landscape
-        }
         notifyObservers(.viewDidLoad(self))
     }
 
@@ -99,18 +94,6 @@ open class VoirController<View: VoirComponent, ViewModel: VoirModel>: UIViewCont
 
     // MARK: - Events Observations
     @objc
-    func deviceOrientationDidChange() {
-        switch UIDevice.current.orientation {
-        case .portrait, .portraitUpsideDown:
-            view.orientation = .portrait
-        case .landscapeLeft, .landscapeRight:
-            view.orientation = .landscape
-        default:
-            break
-        }
-    }
-
-    @objc
     func didBecomeActive() { notifyObservers(.didBecomeActive(self)) }
 
     @objc
@@ -122,14 +105,12 @@ open class VoirController<View: VoirComponent, ViewModel: VoirModel>: UIViewCont
 
 private extension VoirController {
     func startEventsObservation() {
-        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(willBecomeInactive), name: UIApplication.willResignActiveNotification, object: nil)
     }
 
     func stopObservations() {
-        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)

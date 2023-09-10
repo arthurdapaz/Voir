@@ -51,8 +51,18 @@ final class SomeFeatureComponent: UIView, VoirComponent {
             someButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
             someButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
             someButton.heightAnchor.constraint(equalToConstant: 40)
-        }.when(.always)
+        }.when(.portrait)
 
+        activate {
+            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16)
+            stackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16)
+            stackView.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -16)
+
+            someButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16)
+            someButton.leadingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 16)
+            someButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 16)
+            someButton.heightAnchor.constraint(equalToConstant: 40)
+        }.when(.landscape)
 
         backgroundColor = .white
     }
