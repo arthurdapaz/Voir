@@ -14,7 +14,7 @@
 		256524DD2AA4273300D06305 /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256524DC2AA4273300D06305 /* ViewComponent.swift */; };
 		256524DF2AA44D7D00D06305 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256524DE2AA44D7D00D06305 /* Extensions.swift */; };
 		256524E12AA451D800D06305 /* DisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256524E02AA451D800D06305 /* DisclaimerViewController.swift */; };
-		256524EC2AA4659900D06305 /* VoirBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 256524EB2AA4659900D06305 /* VoirBuilder */; };
+		2583F4322AAE4080004945CE /* VoirBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 2583F4312AAE4080004945CE /* VoirBuilder */; };
 		25D3B3ED2A9B021400761DC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D3B3EC2A9B021400761DC8 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				256524EC2AA4659900D06305 /* VoirBuilder in Frameworks */,
+				2583F4322AAE4080004945CE /* VoirBuilder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +126,7 @@
 			);
 			name = VoirBuilderDemo;
 			packageProductDependencies = (
-				256524EB2AA4659900D06305 /* VoirBuilder */,
+				2583F4312AAE4080004945CE /* VoirBuilder */,
 			);
 			productName = VoirDemo;
 			productReference = 2553F01C2A9AF3B600F07A3A /* VoirBuilderDemo.app */;
@@ -157,7 +157,7 @@
 			);
 			mainGroup = 2553F0132A9AF3B600F07A3A;
 			packageReferences = (
-				256524EA2AA4659900D06305 /* XCLocalSwiftPackageReference "../.." */,
+				2583F4302AAE4080004945CE /* XCLocalSwiftPackageReference "../.." */,
 			);
 			productRefGroup = 2553F01D2A9AF3B600F07A3A /* Products */;
 			projectDirPath = "";
@@ -405,14 +405,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		256524EA2AA4659900D06305 /* XCLocalSwiftPackageReference "../.." */ = {
+		2583F4302AAE4080004945CE /* XCLocalSwiftPackageReference "../.." */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../..;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		256524EB2AA4659900D06305 /* VoirBuilder */ = {
+		2583F4312AAE4080004945CE /* VoirBuilder */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = VoirBuilder;
 		};

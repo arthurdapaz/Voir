@@ -8,9 +8,8 @@ final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        notifyOrientation()
-
         (view as! ViewComponent).delegate = self
+        title = "Voir Demo"
     }
 }
 

@@ -99,7 +99,6 @@ final class ViewComponent: UIView {
             noiseImage
             logoImage
             stackView {
-
                 titleLabel
                 subtitleLabel
                 usernameTextField
@@ -117,7 +116,7 @@ final class ViewComponent: UIView {
         }.when(.always)
 
         activate {
-            logoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -32)
+            logoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0)
             logoImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
             logoImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
             logoImage.heightAnchor.constraint(equalToConstant: 300)
@@ -133,12 +132,12 @@ final class ViewComponent: UIView {
         }.when(.portrait)
 
         activate {
-            logoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -32)
+            logoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0)
             logoImage.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
             logoImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
             logoImage.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -20)
 
-            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -12)
+            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor)
             stackView.leadingAnchor.constraint(equalTo: logoImage.trailingAnchor, constant: 20)
             stackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
 
@@ -160,11 +159,6 @@ final class ViewComponent: UIView {
         forgotPasswordButton => { [unowned self] in
             delegate?.forgotPasswordButtonTapped()
         }
-    }
-
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        notifyOrientation()
     }
 }
 

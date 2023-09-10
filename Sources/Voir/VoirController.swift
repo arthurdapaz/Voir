@@ -3,10 +3,11 @@ import VoirBuilder
 
 open class VoirController<View: VoirComponent, ViewModel: VoirModel>: UIViewController {
 
-    public let component = View()
+    public let component: View
     public let viewModel: ViewModel
 
     public init(_ component: View.Type, _ viewModel: ViewModel) {
+        self.component = component.init()
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

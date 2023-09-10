@@ -10,5 +10,5 @@ public extension IsVoirable where Self: Any {
     }
 }
 
-extension NSObject: IsVoirable {}
-
+extension UIView: IsVoirable {}
+extension CALayer: IsVoirable {}

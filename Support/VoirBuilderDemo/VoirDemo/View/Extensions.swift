@@ -51,23 +51,3 @@ extension UIImage {
         return UIGraphicsGetImageFromCurrentImageContext()!
     }
 }
-
-extension UIViewController {
-    func notifyOrientation() {
-        if traitCollection.verticalSizeClass == .regular && traitCollection.horizontalSizeClass == .compact {
-            view.orientation = .portrait
-        } else {
-            view.orientation = .landscape
-        }
-    }
-}
-
-extension UIView {
-    func notifyOrientation() {
-        if traitCollection.verticalSizeClass == .regular && traitCollection.horizontalSizeClass == .compact {
-            orientation = .portrait
-        } else {
-            orientation = .landscape
-        }
-    }
-}

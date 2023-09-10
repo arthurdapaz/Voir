@@ -2,9 +2,13 @@ import UIKit
 
 public struct VoirTraits {
     public enum Orientation: Hashable {
+        case always
         case portrait
         case landscape
-        case always
+
+        fileprivate init(traitCollection: UITraitCollection) {
+            self = traitCollection.verticalSizeClass == .compact ? .landscape : .portrait
+        }
     }
 
     fileprivate let view: UIView
@@ -19,13 +23,21 @@ public struct VoirTraits {
     }
 }
 
-public extension UIView {
+private extension UIView {
     private static var orientedConstraintsKey: UInt8 = 0
-    private static var orientationConstraintsKey: UInt8 = 0
+    private static var orientationKey: UInt8 = 0
 
-    fileprivate var orientedConstraints: [VoirTraits.Orientation: [NSLayoutConstraint]] {
+    var orientedConstraints: [VoirTraits.Orientation: [NSLayoutConstraint]] {
         get { objc_getAssociatedObject(self, &Self.orientedConstraintsKey) as? [VoirTraits.Orientation: [NSLayoutConstraint]] ?? [:] }
         set { objc_setAssociatedObject(self, &Self.orientedConstraintsKey, newValue, .OBJC_ASSOCIATION_RETAIN) }
+    }
+
+    var orientation: VoirTraits.Orientation {
+        get { objc_getAssociatedObject(self, &Self.orientationKey) as? VoirTraits.Orientation ?? .portrait }
+        set {
+            objc_setAssociatedObject(self, &Self.orientationKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+            enableConstraints(for: newValue)
+        }
     }
 
     private func enableConstraints(for orientation: VoirTraits.Orientation) {
@@ -40,16 +52,23 @@ public extension UIView {
 
         orientedConstraints[orientation, default: []].forEach { $0.isActive = true }
     }
+}
 
-    var orientation: VoirTraits.Orientation {
-        get { objc_getAssociatedObject(self, &Self.orientationConstraintsKey) as? VoirTraits.Orientation ?? .portrait }
-        set {
-            objc_setAssociatedObject(self, &Self.orientationConstraintsKey, newValue, .OBJC_ASSOCIATION_RETAIN)
-            enableConstraints(for: newValue)
-        }
-    }
-
+// MARK: - VoirHooker API Approach
+public extension UIView {
     func activate(@ConstraintsBuilder constraints: () -> [NSLayoutConstraint]) -> VoirTraits {
         VoirTraits(view: self, constraints: constraints())
+    }
+
+    @objc
+    func notifyOrientation() {
+        orientation = .init(traitCollection: traitCollection)
+    }
+}
+
+public extension UIViewController {
+    @objc
+    func notifyOrientation() {
+        view.orientation = .init(traitCollection: traitCollection)
     }
 }

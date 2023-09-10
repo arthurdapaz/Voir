@@ -36,10 +36,6 @@ final class DisclaimerViewController: UIViewController {
             homeButton.heightAnchor.constraint(equalToConstant: 48)
         }.when(.always)
 
-        view.backgroundColor = .white
-
-        notifyOrientation()
-
         homeButton => { [unowned self] in
             if navigationController?.viewControllers.first == self {
                 navigationController?.pushViewController(ViewController(), animated: true)
@@ -47,5 +43,8 @@ final class DisclaimerViewController: UIViewController {
                 navigationController?.popViewController(animated: true)
             }
         }
+
+        view.backgroundColor = .white
+        title = "Disclaimer"
     }
 }

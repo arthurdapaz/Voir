@@ -9,14 +9,17 @@ let package = Package(
     products: [
         .library(name: "Voir", type: .static, targets: ["Voir"]),
         .library(name: "VoirBuilder", type: .static, targets: ["VoirBuilder"]),
+        .library(name: "VoirHooker", type: .dynamic, targets: ["VoirHooker"]),
         .executable(name: "TemplateInstaller", targets: ["TemplateInstaller"])
     ],
     targets: [
         .target(name: "Voir", dependencies: [.target(name: "VoirBuilder")]),
         .testTarget(name: "VoirTests", dependencies: [.target(name: "Voir")]),
 
-        .target(name: "VoirBuilder"),
+        .target(name: "VoirBuilder", dependencies: [.target(name: "VoirHooker")]),
         .testTarget(name: "VoirBuilderTests", dependencies: [.target(name: "VoirBuilder")]),
+
+        .target(name: "VoirHooker"),
 
         .executableTarget(name: "TemplateInstaller")
     ]
