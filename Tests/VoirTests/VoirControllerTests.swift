@@ -107,6 +107,13 @@ final class VoirControllerTests: XCTestCase {
             sut.loadView()
         }
     }
+
+    func testVoirComponent_ViewController() {
+        let (sut, _) = makeSut()
+        sut.loadView()
+
+        XCTAssertNotNil(sut.component.viewController)
+    }
 }
 
 // MARK: - SUT

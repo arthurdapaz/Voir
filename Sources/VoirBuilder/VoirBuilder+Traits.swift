@@ -23,11 +23,11 @@ public struct VoirTraits {
     }
 }
 
-private extension UIView {
+extension UIView {
     private static var orientedConstraintsKey: UInt8 = 0
     private static var orientationKey: UInt8 = 0
 
-    var orientedConstraints: [VoirTraits.Orientation: [NSLayoutConstraint]] {
+    fileprivate var orientedConstraints: [VoirTraits.Orientation: [NSLayoutConstraint]] {
         get { objc_getAssociatedObject(self, &Self.orientedConstraintsKey) as? [VoirTraits.Orientation: [NSLayoutConstraint]] ?? [:] }
         set { objc_setAssociatedObject(self, &Self.orientedConstraintsKey, newValue, .OBJC_ASSOCIATION_RETAIN) }
     }

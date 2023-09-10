@@ -64,7 +64,7 @@ final class VoirBuilderTests: XCTestCase {
     }
 
     func testActivateConstraints_WhenDeviceIsPortrait() {
-        let view = UIViewMock()
+        let view = MockUIView()
 
         let constraint1 = view.widthAnchor.constraint(equalToConstant: 50)
         let constraint2 = view.heightAnchor.constraint(equalToConstant: 50)
@@ -85,7 +85,7 @@ final class VoirBuilderTests: XCTestCase {
     }
 
     func testActivateConstraints_WhenDeviceIsLandscpae() {
-        let view = UIViewMock()
+        let view = MockUIView()
 
         let constraint1 = view.widthAnchor.constraint(equalToConstant: 50)
         let constraint2 = view.heightAnchor.constraint(equalToConstant: 50)
@@ -105,6 +105,21 @@ final class VoirBuilderTests: XCTestCase {
         XCTAssertTrue(view.constraints.contains(constraint2))
     }
 
+    func testActivateConstraints_ForAllTraits() {
+        let view = MockUIView()
+
+        let constraint1 = view.widthAnchor.constraint(equalToConstant: 50)
+        let constraint2 = view.heightAnchor.constraint(equalToConstant: 50)
+
+        view.activate {
+            constraint1
+            constraint2
+        }.when(.always)
+
+        XCTAssertTrue(view.constraints.contains(constraint1))
+        XCTAssertTrue(view.constraints.contains(constraint2))
+    }
+
     // Test UIControl elements easy customization
     func testIsThis() {
         let element = UIView().is {
@@ -115,13 +130,5 @@ final class VoirBuilderTests: XCTestCase {
         XCTAssertEqual("\(type(of: element))", "UIView")
         XCTAssertEqual(element.backgroundColor, .white)
         XCTAssertEqual(element.tag, 1000)
-    }
-}
-
-private class UIViewMock: UIView {
-    public var mockTraitCollection: UITraitCollection?
-
-    override var traitCollection: UITraitCollection {
-        mockTraitCollection ?? super.traitCollection
     }
 }
