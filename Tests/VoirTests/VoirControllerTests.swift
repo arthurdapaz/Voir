@@ -28,12 +28,13 @@ final class VoirControllerTests: XCTestCase {
         sut.viewWillAppear(false)
         sut.viewDidAppear(false)
         sut.viewWillDisappear(false)
+        sut.viewWillTransition(to: .zero, with: MockUIViewControllerTransitionCoordinator())
         sut.traitCollectionDidChange(nil)
         sut.didBecomeActive()
         sut.willEnterForeground()
         sut.willBecomeInactive()
         sut.viewDidDisappear(false)
-        XCTAssertEqual(mockObserver.notifiedStages.count, 9)
+        XCTAssertEqual(mockObserver.notifiedStages.count, 10)
         XCTAssertEqual(sut.observers.count, .zero)
     }
 
@@ -43,6 +44,7 @@ final class VoirControllerTests: XCTestCase {
         sut.viewDidLoad()
         sut.viewWillAppear(false)
         sut.viewDidAppear(false)
+        sut.viewWillTransition(to: .zero, with: MockUIViewControllerTransitionCoordinator())
         sut.traitCollectionDidChange(nil)
         sut.didBecomeActive()
         sut.willEnterForeground()
@@ -50,7 +52,7 @@ final class VoirControllerTests: XCTestCase {
         sut.viewWillDisappear(false)
         sut.viewDidDisappear(false)
 
-        XCTAssertEqual(doubles.component.notifiedStages.count, 9)
+        XCTAssertEqual(doubles.component.notifiedStages.count, 10)
     }
 
     func testViewModelReceiveLifecycleStageUpdates() {
@@ -59,6 +61,7 @@ final class VoirControllerTests: XCTestCase {
         sut.viewDidLoad()
         sut.viewWillAppear(false)
         sut.viewDidAppear(false)
+        sut.viewWillTransition(to: .zero, with: MockUIViewControllerTransitionCoordinator())
         sut.traitCollectionDidChange(nil)
         sut.didBecomeActive()
         sut.willEnterForeground()
@@ -66,7 +69,7 @@ final class VoirControllerTests: XCTestCase {
         sut.viewWillDisappear(false)
         sut.viewDidDisappear(false)
 
-        XCTAssertEqual(doubles.viewModel.notifiedStages.count, 9)
+        XCTAssertEqual(doubles.viewModel.notifiedStages.count, 10)
     }
 
     func testComponentReceiveOutputFromViewModel() {
