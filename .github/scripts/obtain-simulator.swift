@@ -56,9 +56,13 @@ final class SimulatorObtainer {
 
         let version = substring(of: info.key, thatMatches: "(\\d+-?\\d+)").replacingOccurrences(of: "-", with: ".")
 
-        let deviceName = "\(info.device.name),OS=\(version)"
+        let platform = "platform=iOS Simulator"
 
-        return "platform=iOS Simulator,name=\(deviceName)"
+        let deviceName = "name=\(info.device.name)"
+
+        let osVersion = "OS=\(version)"
+
+        return [platform, deviceName, osVersion].joined(separator: ",")
     }
 }
 
