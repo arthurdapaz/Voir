@@ -1,21 +1,26 @@
 import UIKit
 
-public struct VoirTraits {
-    public enum Orientation: Hashable {
-        case always
-        case portrait
-        case landscape
+public enum VoirOrientation: Hashable {
+    case always
+    case portrait
+    case landscape
 
-        fileprivate init(traitCollection: UITraitCollection) {
-            self = traitCollection.verticalSizeClass == .compact ? .landscape : .portrait
-        }
+    fileprivate init(traitCollection: UITraitCollection) {
+        self = traitCollection.verticalSizeClass == .compact ? .landscape : .portrait
     }
+}
 
+public struct VoirTraits {
     fileprivate let view: UIView
     fileprivate let constraints: [NSLayoutConstraint]
 
-    public func when(_ orientation: Orientation) {
-        guard orientation != .always else {
+    init(view: UIView, constraints: [NSLayoutConstraint]) {
+        self.view = view
+        self.constraints = constraints
+    }
+
+    public func when(_ orientation: VoirOrientation) {
+        if orientation == .always {
             NSLayoutConstraint.activate(constraints)
             return
         }
@@ -27,23 +32,15 @@ extension UIView {
     private static var orientedConstraintsKey: UInt8 = 0
     private static var orientationKey: UInt8 = 0
 
-    fileprivate var orientedConstraints: [VoirTraits.Orientation: [NSLayoutConstraint]] {
-        get { objc_getAssociatedObject(self, &Self.orientedConstraintsKey) as? [VoirTraits.Orientation: [NSLayoutConstraint]] ?? [:] }
+    fileprivate var orientedConstraints: [VoirOrientation: [NSLayoutConstraint]] {
+        get { objc_getAssociatedObject(self, &Self.orientedConstraintsKey) as? [VoirOrientation: [NSLayoutConstraint]] ?? [:] }
         set { objc_setAssociatedObject(self, &Self.orientedConstraintsKey, newValue, .OBJC_ASSOCIATION_RETAIN) }
     }
 
-    var orientation: VoirTraits.Orientation {
-        get { objc_getAssociatedObject(self, &Self.orientationKey) as? VoirTraits.Orientation ?? .portrait }
-        set {
-            objc_setAssociatedObject(self, &Self.orientationKey, newValue, .OBJC_ASSOCIATION_RETAIN)
-            enableConstraints(for: newValue)
-        }
-    }
-
-    private func enableConstraints(for orientation: VoirTraits.Orientation) {
+    private func enableConstraints(for orientation: VoirOrientation) {
         guard !orientedConstraints[orientation, default: []].isEmpty else { return }
 
-        let switchableOrientations: [VoirTraits.Orientation] = [.portrait, .landscape]
+        let switchableOrientations: [VoirOrientation] = [.portrait, .landscape]
         switchableOrientations
             .filter { $0 != orientation }
             .forEach { disableOrientation in
@@ -52,14 +49,21 @@ extension UIView {
 
         orientedConstraints[orientation, default: []].forEach { $0.isActive = true }
     }
+
+    var orientation: VoirOrientation {
+        get { objc_getAssociatedObject(self, &Self.orientationKey) as? VoirOrientation ?? .portrait }
+        set {
+            objc_setAssociatedObject(self, &Self.orientationKey, newValue, .OBJC_ASSOCIATION_RETAIN)
+            enableConstraints(for: newValue)
+            #if canImport(Cartography)
+            enableConstraintGroup(for: orientation)
+            #endif
+        }
+    }
 }
 
-// MARK: - VoirHooker API Approach
+// MARK: - VoirHooker Interface
 public extension UIView {
-    func activate(@ConstraintsBuilder constraints: () -> [NSLayoutConstraint]) -> VoirTraits {
-        VoirTraits(view: self, constraints: constraints())
-    }
-
     @objc
     func notifyOrientation() {
         orientation = .init(traitCollection: traitCollection)

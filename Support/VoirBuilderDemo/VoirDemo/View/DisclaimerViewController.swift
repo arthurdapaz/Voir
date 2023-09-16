@@ -1,3 +1,4 @@
+import Cartography
 import UIKit
 import VoirBuilder
 
@@ -21,21 +22,48 @@ final class DisclaimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         view {
             disclaimer
             homeButton
-        }.activate {
-            disclaimer.bottomAnchor.constraint(equalTo: homeButton.topAnchor, constant: -32)
-            disclaimer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16)
-            disclaimer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+        }
+//        .activate {
+//            disclaimer.bottomAnchor.constraint(equalTo: homeButton.topAnchor, constant: -32)
+//            disclaimer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16)
+//            disclaimer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+//
+//            homeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+//            homeButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16)
+//            homeButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+//            homeButton.heightAnchor.constraint(equalToConstant: 48)
+//        }
+//        .when(.always)
 
-            homeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
-            homeButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16)
-            homeButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
-            homeButton.heightAnchor.constraint(equalToConstant: 48)
-        }.when(.always)
+        Cartography.constrain(view, disclaimer, homeButton) { view, disclaimer, homeButton in
+            disclaimer.bottom == homeButton.top - 32
+            disclaimer.leading == view.safeAreaLayoutGuide.leading + 16
+            disclaimer.trailing == view.safeAreaLayoutGuide.trailing - 16
 
+            homeButton.bottom == view.safeAreaLayoutGuide.bottom - 16
+            homeButton.leading == view.safeAreaLayoutGuide.leading + 16
+            homeButton.trailing == view.safeAreaLayoutGuide.trailing - 16
+            homeButton.height == 48
+        }.when(view: view, .portrait)
+
+        Cartography.constrain(view, disclaimer, homeButton) { view, disclaimer, homeButton in
+            disclaimer.top == view.safeAreaLayoutGuide.top
+            disclaimer.bottom == view.safeAreaLayoutGuide.bottom
+            disclaimer.leading == view.safeAreaLayoutGuide.leading
+            disclaimer.trailing == view.centerX * 1.2
+
+            homeButton.centerY == view.centerY
+            homeButton.leading == disclaimer.trailing + 16
+            homeButton.trailing == view.safeAreaLayoutGuide.trailing - 16
+            homeButton.height == 100
+        }.when(view: view, .landscape)
+
+
+        
         homeButton => { [unowned self] in
             if navigationController?.viewControllers.first == self {
                 navigationController?.pushViewController(ViewController(), animated: true)

@@ -57,50 +57,50 @@ open class VoirController<View: VoirComponent, ViewModel: VoirModel>: UIViewCont
     // MARK: - ViewController LifeCycle
     open override func viewDidLoad() {
         super.viewDidLoad()
-        notifyObservers(.viewDidLoad(self))
+        notifyObservers(.viewDidLoad)
     }
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        notifyObservers(.viewWillAppear(self, animated))
+        notifyObservers(.viewWillAppear(animated))
     }
 
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         startEventsObservation()
-        notifyObservers(.viewDidAppear(self, animated))
+        notifyObservers(.viewDidAppear(animated))
     }
 
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        notifyObservers(.viewWillDisappear(self, animated))
+        notifyObservers(.viewWillDisappear(animated))
     }
 
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        notifyObservers(.viewDidDisappear(self, animated))
+        notifyObservers(.viewDidDisappear(animated))
         stopObservations()
     }
 
     open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        notifyObservers(.viewWillTransition(self, size, coordinator))
+        notifyObservers(.viewWillTransition(size, coordinator))
     }
 
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        notifyObservers(.traitCollectionDidChange(self, previousTraitCollection))
+        notifyObservers(.traitCollectionDidChange(previousTraitCollection))
     }
 
     // MARK: - Events Observations
     @objc
-    func didBecomeActive() { notifyObservers(.didBecomeActive(self)) }
+    func didBecomeActive() { notifyObservers(.didBecomeActive) }
 
     @objc
-    func willEnterForeground() { notifyObservers(.willEnterForeground(self)) }
+    func willEnterForeground() { notifyObservers(.willEnterForeground) }
 
     @objc
-    func willBecomeInactive() { notifyObservers(.willBecomeInactive(self)) }
+    func willBecomeInactive() { notifyObservers(.willBecomeInactive) }
 }
 
 private extension VoirController {

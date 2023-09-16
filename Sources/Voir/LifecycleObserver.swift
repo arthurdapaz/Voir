@@ -9,14 +9,14 @@ public extension LifecycleObserver {
 }
 
 public enum Lifecycle {
-    case viewDidLoad(_ controller: UIViewController)
-    case viewWillAppear(_ controller: UIViewController, _ animated: Bool)
-    case viewDidAppear(_ controller: UIViewController, _ animated: Bool)
-    case viewWillDisappear(_ controller: UIViewController, _ animated: Bool)
-    case viewDidDisappear(_ controller: UIViewController, _ animated: Bool)
-    case didBecomeActive(_ controller: UIViewController)
-    case willEnterForeground(_ controller: UIViewController)
-    case willBecomeInactive(_ controller: UIViewController)
-    case viewWillTransition(_ controller: UIViewController, _ size: CGSize, _ coordinator: UIViewControllerTransitionCoordinator)
-    case traitCollectionDidChange(_ controller: UIViewController, _ previousTraitCollection: UITraitCollection?)
+    case viewDidLoad
+    case viewWillAppear(_ animated: Bool)
+    case viewDidAppear(_ animated: Bool)
+    case viewWillDisappear(_ animated: Bool)
+    case viewDidDisappear(_ animated: Bool)
+    case didBecomeActive
+    case willEnterForeground
+    case willBecomeInactive
+    case viewWillTransition(_ size: CGSize, _ coordinator: UIViewControllerTransitionCoordinator)
+    case traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?)
 }

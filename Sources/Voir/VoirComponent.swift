@@ -20,4 +20,8 @@ public extension VoirComponent {
         }
         return nil
     }
+
+    var navigationController: UINavigationController? {
+        viewController?.navigationController
+    }
 }

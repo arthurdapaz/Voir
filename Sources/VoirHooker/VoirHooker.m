@@ -1,15 +1,10 @@
-#import <UIKit/UIKit.h>
-#import <objc/runtime.h>
+#import "VoirHooker.h"
 
 #if DEBUG
 __attribute__((constructor)) static void voir() {
-    printf("VoirHooker loaded.\n");
+    printf("VoirHooker loaded!");
 }
 #endif
-
-@interface NSObject (Swizzling)
-+ (void)swizzleMethod:(SEL)originalSelector withMethod:(SEL)swizzledSelector;
-@end
 
 @implementation NSObject (Swizzling)
 + (void)swizzleMethod:(SEL)originalSelector withMethod:(SEL)swizzledSelector {
@@ -26,7 +21,7 @@ __attribute__((constructor)) static void voir() {
 }
 
 - (void)swizzled_traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-    [self swizzled_traitCollectionDidChange:previousTraitCollection];
+    [self swizzled_traitCollectionDidChange: previousTraitCollection];
     if ([self respondsToSelector:@selector(notifyOrientation)]) {
         [self performSelector:@selector(notifyOrientation)];
     }
@@ -35,11 +30,11 @@ __attribute__((constructor)) static void voir() {
 
 @implementation UIViewController (Orientation)
 + (void)load {
-    [self swizzleMethod:@selector(viewDidLoad) withMethod:@selector(swizzled_viewDidLoad)];
+    [self swizzleMethod:@selector(viewWillAppear:) withMethod:@selector(swizzled_viewWillAppear:)];
 }
 
-- (void)swizzled_viewDidLoad {
-    [self swizzled_viewDidLoad];
+- (void)swizzled_viewWillAppear:(BOOL *)animated {
+    [self swizzled_viewWillAppear: animated];
     if ([self respondsToSelector:@selector(notifyOrientation)]) {
         [self performSelector:@selector(notifyOrientation)];
     }

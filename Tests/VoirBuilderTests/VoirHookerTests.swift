@@ -1,3 +1,4 @@
+#if canImport(VoirHooker)
 import XCTest
 @testable import VoirBuilder
 
@@ -10,11 +11,12 @@ final class VoirHookerTests: XCTestCase {
         XCTAssertTrue(view.notifyOrientationCalled)
     }
 
-    func testUIViewController_whenViewDidLoad() {
+    func testUIViewController_whenViewWillAppear() {
         let viewController = MockUIViewController()
         
-        viewController.viewDidLoad()
+        viewController.viewWillAppear(false)
 
         XCTAssertTrue(viewController.notifyOrientationCalled)
     }
 }
+#endif

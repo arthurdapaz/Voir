@@ -12,11 +12,17 @@ let package = Package(
         .library(name: "VoirHooker", type: .dynamic, targets: ["VoirHooker"]),
         .executable(name: "TemplateInstaller", targets: ["TemplateInstaller"])
     ],
+    dependencies: [
+        // .package(url: "https://github.com/robb/Cartography", from: "4.0.0")
+    ],
     targets: [
         .target(name: "Voir", dependencies: [.target(name: "VoirBuilder")]),
         .testTarget(name: "VoirTests", dependencies: [.target(name: "Voir")]),
 
-        .target(name: "VoirBuilder", dependencies: [.target(name: "VoirHooker")]),
+        .target(name: "VoirBuilder", dependencies: [
+            .target(name: "VoirHooker")
+            // .product(name: "Cartography", package: "Cartography")
+        ]),
         .testTarget(name: "VoirBuilderTests", dependencies: [.target(name: "VoirBuilder")]),
 
         .target(name: "VoirHooker"),
