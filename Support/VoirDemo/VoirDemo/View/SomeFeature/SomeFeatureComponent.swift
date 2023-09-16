@@ -75,8 +75,8 @@ final class SomeFeatureComponent: UIView, VoirComponent {
 
     func lifecycleUpdate(_ cycle: Lifecycle) {
         switch cycle {
-        case let .viewDidLoad(controller):
-            controller.title = "SomeFeature"
+        case .viewDidLoad:
+            viewController?.title = "SomeFeature"
 
         default: break
         }

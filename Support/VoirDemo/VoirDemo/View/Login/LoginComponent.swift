@@ -75,24 +75,23 @@ final class LoginComponent: UIView, VoirComponent {
             forgotPasswordButton.centerXAnchor.constraint(equalTo: centerXAnchor)
         }.when(.always)
 
-
         backgroundColor = .white
     }
 
     func bindViews(with input: LoginComponentInput) {
-        loginButton.addAction(UIAction { [unowned self] _ in
+        loginButton => { [unowned self] in
             input.didTapLogin(usernameTextField.text, passwordTextField.text)
-        }, for: .touchUpInside)
+        }
 
-        forgotPasswordButton.addAction(UIAction { _ in
+        forgotPasswordButton => {
             input.didTapForgotPassword()
-        }, for: .touchUpInside)
+        }
     }
 
     func lifecycleUpdate(_ cycle: Lifecycle) {
         switch cycle {
-        case let .viewDidLoad(controller):
-            controller.title = "Login"
+        case .viewDidLoad:
+            viewController?.title = "Login"
 
         default: break
         }

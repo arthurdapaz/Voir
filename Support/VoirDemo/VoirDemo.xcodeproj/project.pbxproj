@@ -11,7 +11,6 @@
 		2553F0222A9AF3B600F07A3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2553F0212A9AF3B600F07A3A /* SceneDelegate.swift */; };
 		2553F0292A9AF3B700F07A3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2553F0282A9AF3B700F07A3A /* Assets.xcassets */; };
 		2553F02C2A9AF3B700F07A3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2553F02A2A9AF3B700F07A3A /* LaunchScreen.storyboard */; };
-		2589DB4C2AAFA656008D62CB /* BeloFeature in Resources */ = {isa = PBXBuildFile; fileRef = 2589DB4B2AAFA656008D62CB /* BeloFeature */; };
 		25D3B3E72A9B01EC00761DC8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D3B3E62A9B01EC00761DC8 /* Login.swift */; };
 		25D3B3E92A9B01F600761DC8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D3B3E82A9B01F600761DC8 /* LoginViewModel.swift */; };
 		25D3B3ED2A9B021400761DC8 /* LoginComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D3B3EC2A9B021400761DC8 /* LoginComponent.swift */; };
@@ -32,7 +31,6 @@
 		2553F0282A9AF3B700F07A3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2553F02B2A9AF3B700F07A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2553F02D2A9AF3B700F07A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2589DB4B2AAFA656008D62CB /* BeloFeature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BeloFeature; sourceTree = "<group>"; };
 		25D3B3E62A9B01EC00761DC8 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		25D3B3E82A9B01F600761DC8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		25D3B3EC2A9B021400761DC8 /* LoginComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginComponent.swift; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 			children = (
 				25FD35ED2A9C00F60069A07F /* SomeFeature */,
 				25D3B3E52A9B01D500761DC8 /* Login */,
-				2589DB4B2AAFA656008D62CB /* BeloFeature */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,7 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2553F02C2A9AF3B700F07A3A /* LaunchScreen.storyboard in Resources */,
-				2589DB4C2AAFA656008D62CB /* BeloFeature in Resources */,
 				2553F0292A9AF3B700F07A3A /* Assets.xcassets in Resources */,
 				25DE72652AA466F600190F6E /* Voir in Resources */,
 			);
